@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  rhtap/gitops: ratty-quail-dotnet-basic 
+  janus-idp.io/tekton: ratty-quail-dotnet-basic
+  backstage.io/kubernetes-id: ratty-quail-dotnet-basic
+  backstage.io/kubernetes-namespace: oc-ci-e2e 
+  app.kubernetes.io/part-of: ratty-quail-dotnet-basic
+resources: 
+- application-dev.yaml 
+- application-stage.yaml 
+- application-prod.yaml  
